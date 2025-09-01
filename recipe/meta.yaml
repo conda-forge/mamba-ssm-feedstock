@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true   # [cuda_compiler_version == "None"]
+  skip: true   # [cuda_compiler_version == "None" or not linux]
   script:
     - export MAMBA_FORCE_BUILD=TRUE
     - export MAMBA_FORCE_CXX11_ABI=TRUE
