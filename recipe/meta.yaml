@@ -10,7 +10,7 @@ source:
   sha256: 5055c8e631a22bb3cfc9958828a7a57ea14deef2ab2a98dcf425a27c87dcf6a7
 
 build:
-  number: 0
+  number: 1
   skip: true   # [cuda_compiler_version == "None"]
   script:
     - export MAMBA_FORCE_BUILD=TRUE
