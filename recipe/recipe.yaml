@@ -39,9 +39,7 @@ requirements:
     - python
     - pytorch * cuda*
     - setuptools >=61.0.0
-    # Remove triton<3.2.0 pin when pytorch depends on triton>=3.4.0
-    # containing the https://github.com/triton-lang/triton/pull/6570 bugfix
-    - triton <3.2.0
+    - triton
     - wheel
   run:
     - causal-conv1d >=1.5.2
@@ -53,10 +51,16 @@ requirements:
     - transformers
 
 tests:
-  - python:
-      imports:
-        - mamba_ssm
-      pip_check: true
+  # Need a GPU to import mamba_ssm, can re-enable when pytorch depends on triton>=3.4.0
+  # containing the https://github.com/triton-lang/triton/pull/6570 bugfix
+  # - python:
+  #     imports:
+  #       - mamba_ssm
+  - requirements:
+      run:
+        - pip
+    script:
+      - pip check
 
 about:
   homepage: https://github.com/state-spaces/mamba
