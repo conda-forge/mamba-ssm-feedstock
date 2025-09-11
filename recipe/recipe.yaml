@@ -44,6 +44,7 @@ requirements:
     - triton <3.2.0
     - wheel
   run:
+    - causal-conv1d >=1.5.2
     - einops
     - packaging
     - python
