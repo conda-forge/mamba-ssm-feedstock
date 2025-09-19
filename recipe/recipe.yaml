@@ -13,7 +13,7 @@ source:
   sha256: 1e072841619af9c171709b2c6ff17daa0d9bf7caf0fcb083f5c11754b63c6cdb
 
 build:
-  number: 1
+  number: 2
   script:
     env:
       MAMBA_FORCE_BUILD: "TRUE"
@@ -31,9 +31,14 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ compiler('cuda') }}
     - ${{ stdlib('c') }}
+    - ninja
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - pytorch
   host:
     - cuda-version ==${{ cuda_compiler_version }}
-    - ninja
     - packaging
     - pip
     - python
@@ -46,7 +51,7 @@ requirements:
     - einops
     - packaging
     - python
-    - pytorch
+    - pytorch * cuda*
     - setuptools >=61.0.0
     - transformers
 
