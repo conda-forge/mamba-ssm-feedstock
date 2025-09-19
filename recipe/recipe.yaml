@@ -36,6 +36,7 @@ requirements:
       then:
         - python
         - cross-python_${{ target_platform }}
+        - pytorch
   host:
     - cuda-version ==${{ cuda_compiler_version }}
     - packaging
