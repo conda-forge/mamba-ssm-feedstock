@@ -31,9 +31,9 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ compiler('cuda') }}
     - ${{ stdlib('c') }}
+    - ninja
   host:
     - cuda-version ==${{ cuda_compiler_version }}
-    - ninja
     - packaging
     - pip
     - python
@@ -46,7 +46,7 @@ requirements:
     - einops
     - packaging
     - python
-    - pytorch
+    - pytorch * cuda*
     - setuptools >=61.0.0
     - transformers
 
