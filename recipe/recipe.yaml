@@ -32,6 +32,10 @@ requirements:
     - ${{ compiler('cuda') }}
     - ${{ stdlib('c') }}
     - ninja
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
   host:
     - cuda-version ==${{ cuda_compiler_version }}
     - packaging
