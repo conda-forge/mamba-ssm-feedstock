@@ -6,7 +6,9 @@ context:
 
 package:
   name: ${{ name|lower }}
-  version: ${{ version }}
+  # Strip ".postX" from version number because these just indicate wheel rebuilds and
+  # are not relevant to conda builds
+  version: ${{ (version | split('.'))[:3] | join('.') }}
 
 source:
   url: https://github.com/state-spaces/mamba/archive/refs/tags/v${{ version }}.tar.gz
