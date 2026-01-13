@@ -41,8 +41,8 @@ requirements:
     - ninja
     - if: build_platform != target_platform
       then:
-        - python
         - cross-python_${{ target_platform }}
+        - python
         - pytorch
   host:
     - cuda-version ==${{ cuda_compiler_version }}
