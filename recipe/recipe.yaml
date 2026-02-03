@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mamba-ssm
-  version: "2.2.6.post3"
+  version: "2.3.0"
 
 package:
   name: ${{ name|lower }}
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://github.com/state-spaces/mamba/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: a15cb544d6e64e8c1097cef57c0a77b0c7dc464bf8326d85f9928c393ad77e00
+  sha256: f54dd3a3627770700d0f80938e2aebc49c5f79c5026d50259bc7bf1ba4ee1784
 
 build:
   number: 0
@@ -41,8 +41,8 @@ requirements:
     - ninja
     - if: build_platform != target_platform
       then:
-        - python
         - cross-python_${{ target_platform }}
+        - python
         - pytorch
   host:
     - cuda-version ==${{ cuda_compiler_version }}
