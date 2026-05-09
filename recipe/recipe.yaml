@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mamba-ssm
-  version: "2.3.1"
+  version: "2.3.2"
 
 package:
   name: ${{ name|lower }}
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://github.com/state-spaces/mamba/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 36898524910beff6e8226a507b63f6c8e3df94c90d8fb0c7ece02c0125976c29
+  sha256: bec7661dafe3e56a0d93345e12122835a535d959bb8fa85cab07b4567c3c6091
 
 build:
   number: 0
