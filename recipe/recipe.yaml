@@ -15,7 +15,7 @@ source:
   sha256: a49423a64dfccc5c46d8ba6c0fb50a3a8e48eee3e4c65b880b9fad5ac47383c2
 
 build:
-  number: 0
+  number: 1
   script:
     env:
       MAMBA_FORCE_BUILD: "TRUE"
