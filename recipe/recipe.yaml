@@ -51,15 +51,18 @@ requirements:
     - python
     - pytorch * cuda*
     - setuptools >=61.0.0
-    - triton
+    - triton >=3.5.0
     - wheel
   run:
+    - apache-tvm-ffi <=0.1.9
     - causal-conv1d >=1.5.2
     - einops
     - packaging
     - python
     - pytorch * cuda*
+    - quack-kernels >=0.3.4
     - setuptools >=61.0.0
+    - tilelang ==0.1.8 # https://github.com/tile-ai/tilelang/issues/2040
     - transformers
 
 tests:
